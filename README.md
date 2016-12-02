@@ -1,24 +1,4 @@
-# README
+This is a simple Rails 5/ React one page site that makes use of the Open Movie Database API to search for films. 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Search for a movie. Select an individual film from the results. 
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
