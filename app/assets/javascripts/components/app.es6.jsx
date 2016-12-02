@@ -3,7 +3,8 @@ class App extends React.Component {
     super();
     this.state = {
       film: [],
-      results: []
+      results: [],
+      filmSelected: true
     };
      this.handleSearchTitle = this.handleSearchTitle.bind(this);
      this.handleSetFilm = this.handleSetFilm.bind(this);
@@ -20,13 +21,15 @@ class App extends React.Component {
 
   handleSearchTitle(results){
     this.setState({
-      results: results
+      results: results,
+      filmSelected: false
     })
   }
 
   handleSetFilm(title){
     this.setState({
-      film: title
+      film: title, 
+      filmSelected: true
     })
   }
 
@@ -38,10 +41,15 @@ class App extends React.Component {
         </header>
 
         <section className="container">
-          <Results onSetFilm= {this.handleSetFilm}/>
-          <hr/>
-          <Poster film={this.state.film}/>
-          <Info film={this.state.film}/>
+          { !this.state.filmSelected ? <Results results= {this.state.results} onSetFilm= {this.handleSetFilm}/> : null }
+          { this.state.filmSelected ?  
+            <div>
+              <hr/>
+              <Poster film={this.state.film}/>
+              <Info film={this.state.film}/>
+            </div>
+          : null }
+          
         </section>
       </div>
     );

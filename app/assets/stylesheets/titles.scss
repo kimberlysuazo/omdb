@@ -27,11 +27,10 @@ ul {
 
 li {
   list-style-type: none;
+  display: inline-block;
+  vertical-align: top;
 }
 
-a {
-  color: #FF0057;
-}
 
 h3 {
   color: #66757F;
@@ -65,16 +64,13 @@ p {
 
 #search {
   position: relative;
-  // height: 24px;
   bottom: 10px;
-  // right: -100px;
-  // // width: 200px;
   border-radius: 24px;
   padding: 4px;
   padding-left: 10px;
   padding-right: 36px;
   font-size: 14px;
-  outline: none;
+  background-color: white;
 }
 
 #button{
@@ -114,7 +110,30 @@ p {
   line-height: 1.25em;
 }
 
+.results {
+  padding-left: 30px;
+}
+
+.individual-listing {
+  height: 320px; 
+  width: 180px;
+  padding: 10px 20px 10px;
+  vertical-align: top;
+}
+
 .result-img {
-  height: 100px;
-  width: 75px;
+  height: 250px;
+  width: 167px;
+  display: inline-block;
+}
+
+.listing-info {
+  vertical-align: top;
+  margin-bottom: 5px;
+}
+
+.listing-info a {
+  color: #0340ba;
+  text-decoration: none;
+  font-weight: bold;
 }

@@ -6,17 +6,13 @@ class Search extends React.Component {
 
   handleSubmit(event){
     event.preventDefault();
-    var textArea = this.refs.titleSearch.value;
-    var textArea2 = this.refs.yearSearch.value;
-    var params = {t : textArea, y: textArea2 }
-    var baseUrl = "http://www.omdbapi.com/?t=";
+    var search = this.refs.titleSearch.value;
+    var baseUrl = "http://www.omdbapi.com/?s=";
 
     $.ajax({
-      url: baseUrl,
-      data: $.param(params)
+      url: baseUrl + search
     }).done(function(response){
       this.refs.titleSearch.value = "";
-      this.refs.yearSearch.value = "";
       this.props.onSearchTitle(response);
     }.bind(this));
   }
@@ -24,11 +20,10 @@ class Search extends React.Component {
   render(){
     return(
       <div id="brand">
-      <h1> Welcome to (NOT) IMDB </h1><p><span className= "title"> </span></p>
+      <h1> Welcome to (NOT) IMDB </h1>
       <form id="search-form" onSubmit={this.handleSubmit}>
         <input ref= "titleSearch" id="search" type="text" name="query" placeholder="
         Enter Film Title Here" />
-        
         <input id="button" type="submit" value="Go" />
       </form>
       </div>
