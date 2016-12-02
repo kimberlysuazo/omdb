@@ -20,7 +20,7 @@ class Search extends React.Component {
   render(){
     return(
       <div id="brand">
-      <h1> Welcome to (NOT) IMDB </h1>
+      <h1> Open Movie Database Search </h1>
       <form id="search-form" onSubmit={this.handleSubmit}>
         <input ref= "titleSearch" id="search" type="text" name="query" placeholder="
         Enter Film Title Here" />
