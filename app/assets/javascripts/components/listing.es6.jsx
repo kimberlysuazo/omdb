@@ -24,7 +24,7 @@ class Listing extends React.Component {
       var poster = Poster;
     }
 
-    var baseUrl = "http://www.omdbapi.com/?i="
+    var baseUrl = "https://www.omdbapi.com/?i="
 
     return (
       <li>

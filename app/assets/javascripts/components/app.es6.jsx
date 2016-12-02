@@ -12,7 +12,7 @@ class App extends React.Component {
 
   componentDidMount() {
     $.ajax({
-      url: "http://www.omdbapi.com/?t=eternal%20sunshine%20of%20the%20spotless%20mind"
+      url: "https://www.omdbapi.com/?t=eternal%20sunshine%20of%20the%20spotless%20mind"
     })
     .done((response) => {
       this.setState({film: response});

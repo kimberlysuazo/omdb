@@ -7,7 +7,7 @@ class Search extends React.Component {
   handleSubmit(event){
     event.preventDefault();
     var search = this.refs.titleSearch.value;
-    var baseUrl = "http://www.omdbapi.com/?s=";
+    var baseUrl = "https://www.omdbapi.com/?s=";
 
     $.ajax({
       url: baseUrl + search
