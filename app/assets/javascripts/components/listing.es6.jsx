@@ -28,9 +28,13 @@ class Listing extends React.Component {
 
     return (
       <li>
+        <div className="individual-listing">
           <img className="result-img" src = {poster} />
-          <p><a onClick={this.handleFilmTitleClick} className="title-link" href={baseUrl + imdbID} >{Title}</a></p>
-          <p>Year: {Year}</p>
+          <div className="listing-info">
+            <p><a onClick={this.handleFilmTitleClick} className="title-link" href={baseUrl + imdbID} >{Title}</a></p>
+            <p>Year: {Year}</p>
+          </div>  
+        </div>  
       </li>
     );
   }
