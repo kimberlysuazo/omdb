@@ -1,26 +1,35 @@
 class Listing extends React.Component {
   constructor(){
     super();
-    // this.handleSubmit = this.handleSubmit.bind(this);
+  this.handleFilmTitleClick = this.handleFilmTitleClick.bind(this);
   }
 
   
+  handleFilmTitleClick(event){
+    event.preventDefault();
+  
+    $.ajax({
+      url: $(event.target).attr('href')
+    }).done(function(response){
+      this.props.onSetFilm(response);
+    }.bind(this));
+  }
+
   render() {
-    if (this.props.titles.Poster === "N/A") {
-      var poster  = "http://www.e-squareindia.com/images/poster-not-available.png"
+    let { Title, Year, imdbID, Poster } = this.props.titles;
+    
+    if (Poster === "N/A") {
+      var poster = "http://www.e-squareindia.com/images/poster-not-available.png"
     } else {
-      var poster  = this.props.titles.Poster;
+      var poster = Poster;
     }
 
-    var base_url = "http://www.omdbapi.com/?i="
-
-    let { Title, Year, imdbID } = this.props.titles;
-
+    var baseUrl = "http://www.omdbapi.com/?i="
 
     return (
       <li>
           <img className="result-img" src = {poster} />
-          <p><a className="title-link" href={base_url + imdbID} >{Title}</a></p>
+          <p><a onClick={this.handleFilmTitleClick} className="title-link" href={baseUrl + imdbID} >{Title}</a></p>
           <p>Year: {Year}</p>
       </li>
     );

@@ -6,6 +6,7 @@ class App extends React.Component {
       results: []
     };
      this.handleSearchTitle = this.handleSearchTitle.bind(this);
+     this.handleSetFilm = this.handleSetFilm.bind(this);
   }
 
   componentDidMount() {
@@ -17,7 +18,13 @@ class App extends React.Component {
     })
   }
 
-  handleSearchTitle(title){
+  handleSearchTitle(results){
+    this.setState({
+      results: results
+    })
+  }
+
+  handleSetFilm(title){
     this.setState({
       film: title
     })
@@ -31,7 +38,7 @@ class App extends React.Component {
         </header>
 
         <section className="container">
-          <Results />
+          <Results onSetFilm= {this.handleSetFilm}/>
           <hr/>
           <Poster film={this.state.film}/>
           <Info film={this.state.film}/>

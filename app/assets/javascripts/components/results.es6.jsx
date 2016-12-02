@@ -1,4 +1,5 @@
 class Results extends React.Component {
+  
 
   render() {
     // let { titles } = this.props.results;
@@ -41,7 +42,7 @@ class Results extends React.Component {
         <h3>Search Results</h3>
         <ul>
           {titles.Search.map((title, i) =>
-            <Listing key={i} titles={title} id={i} />
+            <Listing onSetFilm= {this.props.onSetFilm} key={i} titles={title} id={i} />
           )}
         </ul>
       </div>
