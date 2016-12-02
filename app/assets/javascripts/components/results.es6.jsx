@@ -1,15 +1,11 @@
 class Results extends React.Component {
   
-
   render() {
     
-    let results = this.props.results;
-    if (results.Search) {
-      results = results.Search;
-    }
+    let results = this.props.results.Search;
     
     return (
-      <div>
+      <div className="results">
         <h3>Search Results</h3>
         <ul>
           {results.map((title, i) =>
