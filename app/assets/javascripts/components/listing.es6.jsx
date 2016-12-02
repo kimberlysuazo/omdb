@@ -1,7 +1,7 @@
 class Listing extends React.Component {
   constructor(){
     super();
-    this.handleSubmit = this.handleSubmit.bind(this);
+    // this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   

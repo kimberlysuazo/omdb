@@ -2,7 +2,7 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      titles: [],
+      film: [],
       results: []
     };
      this.handleSearchTitle = this.handleSearchTitle.bind(this);
@@ -13,13 +13,13 @@ class App extends React.Component {
       url: "http://www.omdbapi.com/?t=eternal%20sunshine%20of%20the%20spotless%20mind"
     })
     .done((response) => {
-      this.setState({titles: response});
+      this.setState({film: response});
     })
   }
 
   handleSearchTitle(title){
     this.setState({
-      titles: title
+      film: title
     })
   }
 
@@ -33,8 +33,8 @@ class App extends React.Component {
         <section className="container">
           <Results />
           <hr/>
-          <Poster titles={this.state.titles}/>
-          <Info titles={this.state.titles}/>
+          <Poster film={this.state.film}/>
+          <Info film={this.state.film}/>
         </section>
       </div>
     );

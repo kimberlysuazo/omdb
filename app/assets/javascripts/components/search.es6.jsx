@@ -15,7 +15,6 @@ class Search extends React.Component {
       url: baseUrl,
       data: $.param(params)
     }).done(function(response){
-      debugger;
       this.refs.titleSearch.value = "";
       this.refs.yearSearch.value = "";
       this.props.onSearchTitle(response);

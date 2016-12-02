@@ -4,10 +4,10 @@ class Poster extends React.Component {
   }
 
   render() {
-    if (this.props.titles.Poster === "N/A") {
+    if (this.props.film.Poster === "N/A") {
       var poster  = "http://www.e-squareindia.com/images/poster-not-available.png"
     } else {
-      var poster  = this.props.titles.Poster;
+      var poster  = this.props.film.Poster;
     }
 
     return(

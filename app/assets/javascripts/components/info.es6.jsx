@@ -1,6 +1,6 @@
 class Info extends React.Component {
   render() {
-    let { Title, Year, imdbRating, Director, Actors, Plot, Writer, Rated } = this.props.titles;
+    let { Title, Year, imdbRating, Director, Actors, Plot, Writer, Rated } = this.props.film;
     return(
       <div className="movie-info">
         <h2>{Title}</h2>
