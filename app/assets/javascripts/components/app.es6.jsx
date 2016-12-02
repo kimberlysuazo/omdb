@@ -38,7 +38,7 @@ class App extends React.Component {
         </header>
 
         <section className="container">
-          <Results onSetFilm= {this.handleSetFilm}/>
+          <Results results= {this.state.results} onSetFilm= {this.handleSetFilm}/>
           <hr/>
           <Poster film={this.state.film}/>
           <Info film={this.state.film}/>
